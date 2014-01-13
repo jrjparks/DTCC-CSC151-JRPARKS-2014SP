@@ -23,25 +23,6 @@ public class Main {
 			System.out.printf("%d\t\t%d\n", number, factorial(number.longValue()));
 	}
 	
-	/**
-	 * 
-	 * @param input
-	 *            - BufferedReader for input
-	 * @return
-	 */
-	public static Integer readInteger(BufferedReader input) {
-		Integer n = null;
-		while (n == null) {
-			try {
-				System.out.print("Enter an integer:");
-				n = Integer.parseInt(input.readLine());
-			} catch (Exception ioex) {
-				System.out.println("You did not enter a number.\nPlease try again.");
-			}
-		}
-		return n;
-	}
-	
 	public static Long factorial(Long number) {
 		if (number == 0) return 1L;
 		return number * factorial(number - 1);
