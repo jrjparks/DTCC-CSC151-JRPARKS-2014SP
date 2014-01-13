@@ -3,8 +3,6 @@
  */
 package com.dtcc.csc.jrparks.factorials;
 
-import java.io.BufferedReader;
-
 /**
  * @author jrparks
  * 
