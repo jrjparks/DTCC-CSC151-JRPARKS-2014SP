@@ -10,29 +10,44 @@ import com.dtcc.csc.jrparks.area_exercise.shapes.Shape;
  * 
  */
 public abstract class ThreeDinmensionalShape implements Shape {
-	protected Double	X, Y, Z;
-	
-	public Double getX() {
-		return X;
+	protected Double L, W, D;
+
+	public Double[] getDimentions() {
+		return new Double[] { this.L, this.W, this.D };
 	}
-	
-	public void setX(Double x) {
-		this.X = x;
+
+	public void setDimentions(Double... dimentions) {
+		this.L = dimentions[0];
+		this.W = dimentions[1];
+		this.D = dimentions[2];
 	}
-	
-	public Double getY() {
-		return Y;
+
+	public String[] getDimentionQuestions() {
+		return new String[] { "Dimention L: ", "Dimention W: ",
+				"Dimention D: ", };
 	}
-	
-	public void setY(Double y) {
-		this.Y = y;
+
+	public Double getL() {
+		return L;
 	}
-	
+
+	public void setL(Double l) {
+		this.L = l;
+	}
+
+	public Double getW() {
+		return W;
+	}
+
+	public void setW(Double w) {
+		this.W = w;
+	}
+
 	public Double getZ() {
-		return Z;
+		return D;
 	}
-	
-	public void setZ(Double z) {
-		this.Z = z;
+
+	public void setD(Double d) {
+		this.D = d;
 	}
 }

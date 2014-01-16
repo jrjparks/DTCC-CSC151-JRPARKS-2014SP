@@ -10,21 +10,34 @@ import com.dtcc.csc.jrparks.area_exercise.shapes.Shape;
  * 
  */
 public abstract class TwoDimensionalShape implements Shape {
-	protected Double	X, Y;
-	
-	public Double getX() {
-		return X;
+	protected Double L, W;
+
+	public Double[] getDimentions() {
+		return new Double[] { this.L, this.W, };
 	}
-	
-	public void setX(Double x) {
-		this.X = x;
+
+	public void setDimentions(Double... dimentions) {
+		this.L = dimentions[0];
+		this.W = dimentions[1];
 	}
-	
-	public Double getY() {
-		return Y;
+
+	public String[] getDimentionQuestions() {
+		return new String[] { "Dimention L: ", "Dimention W: ", };
 	}
-	
-	public void setY(Double y) {
-		this.Y = y;
+
+	public Double getL() {
+		return L;
+	}
+
+	public void setL(Double l) {
+		this.L = l;
+	}
+
+	public Double getW() {
+		return W;
+	}
+
+	public void setW(Double w) {
+		this.W = w;
 	}
 }
