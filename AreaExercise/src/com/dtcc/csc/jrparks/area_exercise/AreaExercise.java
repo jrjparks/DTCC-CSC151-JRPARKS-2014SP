@@ -57,6 +57,8 @@ public final class AreaExercise {
 				for (String opt : menu)
 					System.out.printf("%d: %s\n", opt_id++, opt);
 				System.out.print("Please select an option (-1 exit): ");
+				if (!scanner.hasNextInt())
+					scanner.next();
 			} while (!scanner.hasNextInt());
 			selection = scanner.nextInt();
 		} while (!(selection <= menu.length || selection == -1));

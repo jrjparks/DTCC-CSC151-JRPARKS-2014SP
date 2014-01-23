@@ -30,11 +30,12 @@ public class Main {
 	public static Integer readInteger(Scanner input) {
 		Integer n = null;
 		while (n == null) {
-			try {
-				System.out.print("Enter an integer:");
+			System.out.print("Enter an integer:");
+			if (input.hasNextInt())
 				n = input.nextInt();
-			} catch (Exception ioex) {
+			else {
 				System.out.println("You did not enter a number.\nPlease try again.");
+				input.next();
 			}
 		}
 		return n;
