@@ -24,7 +24,7 @@ public class Main {
 	/**
 	 * 
 	 * @param input
-	 *            - BufferedReader for input
+	 *            - Scanner for input
 	 * @return
 	 */
 	public static Integer readInteger(Scanner input) {
