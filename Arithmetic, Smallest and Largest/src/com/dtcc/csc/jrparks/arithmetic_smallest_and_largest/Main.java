@@ -10,14 +10,14 @@ import java.util.Scanner;
  * 
  */
 public class Main {
-
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		System.out.println("DTCC CSC 151 450 SP14 - JRParks");
 		System.out.println("Arithmetic, Smallest and Largest");
-
+		
 		Scanner input = new Scanner(System.in);
 		Integer n1 = readInteger(input), n2 = readInteger(input), n3 = readInteger(input);
 		Integer[] asw = doMaths(n1, n2, n3);
@@ -27,19 +27,18 @@ public class Main {
 		System.out.printf("Smallest: %d\n", asw[3]);
 		System.out.printf("Largest: %d\n", asw[4]);
 	}
-
+	
 	/**
 	 * 
 	 * @param input
-	 *            - BufferedReader for input
+	 *            - Scanner for input
 	 * @return
 	 */
 	public static Integer readInteger(Scanner input) {
 		Integer n = null;
 		while (n == null) {
 			System.out.print("Enter an integer:");
-			if (input.hasNextInt())
-				n = input.nextInt();
+			if (input.hasNextInt()) n = input.nextInt();
 			else {
 				System.out.println("You did not enter a number.\nPlease try again.");
 				input.next();
@@ -47,7 +46,7 @@ public class Main {
 		}
 		return n;
 	}
-
+	
 	/**
 	 * 
 	 * @param ns
