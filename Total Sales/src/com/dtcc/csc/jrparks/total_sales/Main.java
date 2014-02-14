@@ -16,6 +16,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		System.out.println("DTCC CSC 151 450 SP14 - JRParks");
+		System.out.println("Total Sales");
+		
 		List<SalesPerson> salesPeople =new LinkedList<SalesPerson>();
 		salesPeople.add(new SalesPerson(1, new SalesSlip(1, 10D), new SalesSlip(4, 30D)));
 		salesPeople.add(new SalesPerson(2, new SalesSlip(1, 20D), new SalesSlip(3, 10D)));
