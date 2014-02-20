@@ -6,6 +6,12 @@ package com.dtcc.csc.jrparks.area_exercise;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.dtcc.csc.jrparks.area_exercise.shapes.Shape;
+import com.dtcc.csc.jrparks.area_exercise.shapes.threedimentional.CuboidShape;
+import com.dtcc.csc.jrparks.area_exercise.shapes.threedimentional.SphereShape;
+import com.dtcc.csc.jrparks.area_exercise.shapes.twodimentional.EllipseShape;
+import com.dtcc.csc.jrparks.area_exercise.shapes.twodimentional.RectangleShape;
+
 /**
  * @author jrparks
  * 
@@ -65,7 +71,32 @@ public final class AreaExercise {
 		return selection;
 	}
 
-	public String[] getQuestions(Integer selection) {
+	public Shape getShape(Integer selection) {
+		switch (selection) {
+		default:
+			return null;
+
+		case 1:
+			return new EllipseShape();
+
+		case 2:
+			return new RectangleShape();
+
+		case 3:
+			return new SphereShape();
+
+		case 4:
+			return new CuboidShape();
+		}
+	}
+
+	public Double askQuestion(String question) {
+		System.out.print(question);
+		do {
+			if (scanner.hasNextDouble())
+				return scanner.nextDouble();
+			scanner.next();
+		} while (!scanner.hasNextDouble());
 		return null;
 	}
 }
