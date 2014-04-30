@@ -90,7 +90,7 @@ public class Game {
 		if (this.puzzles.isEmpty()) this.currentPuzzleIndex = 0;
 		else do { // Prevent repeat puzzles
 			this.currentPuzzleIndex = rand.nextInt(this.puzzles.size());
-		} while (prevPuzzle == this.currentPuzzleIndex);
+		} while (prevPuzzle == this.currentPuzzleIndex && solved);
 		// Reset game
 		this.solved = false;
 		// Empty guessed letters
