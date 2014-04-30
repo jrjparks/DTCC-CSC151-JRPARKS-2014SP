@@ -66,6 +66,7 @@ public class Game {
 	
 	/**
 	 * Add a new puzzle(s) to the game.
+	 * 
 	 * @param puzzles
 	 */
 	public void addPuzzles(Puzzle... puzzles) {
@@ -76,6 +77,7 @@ public class Game {
 	
 	/**
 	 * Retrieve the current puzzle.
+	 * 
 	 * @return Current Puzzle
 	 */
 	public Puzzle currentPuzzle() {
@@ -99,6 +101,7 @@ public class Game {
 	
 	/**
 	 * Add a new player(s) to the game.
+	 * 
 	 * @param players
 	 */
 	public void addPlayers(Player... players) {
@@ -108,6 +111,7 @@ public class Game {
 	
 	/**
 	 * Retrieve the current player.
+	 * 
 	 * @return Current player.
 	 */
 	public Player currentPlayer() {
@@ -173,7 +177,7 @@ public class Game {
 						else System.out.printf("There is %d %s in the puzzle.\n", (int) letterData[1], letterData[0]);
 						this.currentPlayer().setWinnings(this.currentPlayer().getWinnings() + (spinPrize * (int) letterData[1]));
 					} else {
-						System.out.printf("I'm sorry but the letter '%s' is not in the puzzle.\n", letterData[0]);
+						System.out.printf("I'm sorry but the letter '%s' is not a valid choice.\n", letterData[0]);
 						++this.currentPlayerIndex;
 					}
 				}
@@ -205,6 +209,7 @@ public class Game {
 	
 	/**
 	 * Ask the current player for a letter
+	 * 
 	 * @return [letter, count]
 	 */
 	public Object[] guessLetter() {
@@ -219,6 +224,7 @@ public class Game {
 	
 	/**
 	 * Try for game solve
+	 * 
 	 * @return whether puzzle was solved
 	 */
 	public Boolean querySolve() {
@@ -230,6 +236,7 @@ public class Game {
 	
 	/**
 	 * Return available letter choices
+	 * 
 	 * @return String of letters
 	 */
 	public String getAvailableLetters() {
@@ -242,6 +249,7 @@ public class Game {
 	
 	/**
 	 * Get revealed puzzle
+	 * 
 	 * @return revealed puzzle
 	 */
 	private String generateRevealedPuzzle() {
@@ -262,22 +270,22 @@ public class Game {
 		return this.revealedPuzzle;
 	}
 	
-	
 	/**
 	 * Guess letter
-	 * @param c - Letter to guess
+	 * 
+	 * @param c
+	 *            - Letter to guess
 	 * @return letter count
 	 */
 	public int guessLetter(char c) {
 		c = Character.toUpperCase(c);
-		int index = new String(guessableLetters).indexOf(c);
-		if (!Arrays.asList(guessedLetters).contains(c)) {
+		int count = 0, index = this.getAvailableLetters().indexOf(c);
+		if (index >= 0) {
 			guessedLetters[index] = guessableLetters[index];
-		}
-		int count = 0;
-		for (char _c : this.currentPuzzle().getPuzzle().toCharArray()) {
-			if (_c == c) {
-				++count;
+			for (char _c : this.currentPuzzle().getPuzzle().toCharArray()) {
+				if (_c == c) {
+					++count;
+				}
 			}
 		}
 		return count;
@@ -285,7 +293,9 @@ public class Game {
 	
 	/**
 	 * Solve puzzle
-	 * @param guess - Puzzle guess
+	 * 
+	 * @param guess
+	 *            - Puzzle guess
 	 * @return whether guess was correct
 	 */
 	public Boolean solvePuzzle(String guess) {
@@ -296,6 +306,7 @@ public class Game {
 	
 	/**
 	 * Spin the wheel
+	 * 
 	 * @return wheel value
 	 */
 	public int spinWheel() {
@@ -304,6 +315,7 @@ public class Game {
 	
 	/**
 	 * Sleep
+	 * 
 	 * @param millis
 	 */
 	protected void sleep(long millis) {
