@@ -23,13 +23,13 @@ public class Main {
 		game.addPlayers(new Player("Player 1"));
 		game.addPlayers(new Player("Player 2"));
 		game.addPlayers(new Player("Player 3"));
-		while (!game.getQuit()) {
-			game.generateNewPuzzle();
-			while (!game.getQuit() && !game.getSolved()) {
-				game.drawGame();
-				game.queryPlayer();
-			}
+		// while (!game.getQuit()) {
+		game.generateNewPuzzle();
+		while (!game.getQuit() && !game.getSolved()) {
+			game.drawGame();
+			game.queryPlayer();
 		}
+		// }
 		System.out.print("Thanks for playing the Wheel of Fortune");
 	}
 }
